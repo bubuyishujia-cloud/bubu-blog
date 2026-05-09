@@ -1,8 +1,7 @@
 import { useState, useEffect } from 'react';
 import './PostDetail.css';
 
-const API_URL = 'http://172.20.10.3:5000/api';
-
+  const API_URL = 'https://bubu-blog-backend.onrender.com/api';
 function PostDetail({ post, onClose, nickname, isLoggedIn, token, onDelete }) {
   const [comments, setComments] = useState(post.comments || []);
   const [commentContent, setCommentContent] = useState('');
