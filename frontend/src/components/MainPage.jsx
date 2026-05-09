@@ -3,7 +3,7 @@ import './MainPage.css';
 import avatarImg from '../assets/avatar.jpg';
 import PostDetail from './PostDetail';
 
-const API_URL = 'http://172.20.10.3:5000/api';
+const API_URL = 'https://bubu-blog-backend.onrender.com/api';
 
 function MainPage({ isLoggedIn, token, nickname, onNicknameChange, onLoginClick, onLogout }) {
   const [posts, setPosts] = useState([]);
