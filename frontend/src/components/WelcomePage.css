@@ -1,0 +1,63 @@
+.welcome-page {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* 默认渐变背景 - 如果你有背景图，可以注释掉下面这行 */
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  /* 使用背景图时，取消下面这些注释并注释掉上面的 background */
+  /* background-image: url('../assets/background.jpg'); */
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.welcome-content {
+  text-align: center;
+  color: white;
+  animation: fadeIn 1s ease-in;
+}
+
+.welcome-title {
+  font-size: 4rem;
+  margin-bottom: 3rem;
+  font-weight: 700;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.welcome-subtitle {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  opacity: 0.95;
+  color: #FF69B4;
+  font-weight: 600;
+}
+
+.enter-button {
+  padding: 1rem 3rem;
+  font-size: 1.2rem;
+  background: white;
+  color: #667eea;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.enter-button:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
