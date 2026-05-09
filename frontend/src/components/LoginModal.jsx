@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import './LoginModal.css';
 
-const API_URL = 'http://172.20.10.3:5000/api';
+const API_URL = 'https://bubu-blog-backend.onrender.com/api';
 
 function LoginModal({ onClose, onLogin }) {
   const [username, setUsername] = useState('');
