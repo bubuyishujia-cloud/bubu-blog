@@ -12,10 +12,31 @@ function MainPage({ isLoggedIn, token, nickname, onNicknameChange, onLoginClick,
   const [selectedPost, setSelectedPost] = useState(null);
   const [showNicknameEdit, setShowNicknameEdit] = useState(false);
   const [tempNickname, setTempNickname] = useState(nickname);
+  const [showLoginButton, setShowLoginButton] = useState(false);
+  const [clickCount, setClickCount] = useState(0);
 
+    useEffect(() => {
+      fetchPosts();
+    }, []);
   useEffect(() => {
     fetchPosts();
   }, []);
+  const handleAvatarClick = () => {
+      const newCount = clickCount + 1;
+      setClickCount(newCount);
+
+      if (newCount >= 3) {
+        setShowLoginButton(true);
+        setTimeout(() => {
+          setClickCount(0);
+        }, 5000);
+      } else {
+        setTimeout(() => {
+          setClickCount(0);
+        }, 2000);
+      }
+    };
+
 
   const fetchPosts = async () => {
     try {
@@ -123,7 +144,13 @@ function MainPage({ isLoggedIn, token, nickname, onNicknameChange, onLoginClick,
     <div className="main-page">
       <header className="header">
         <div className="header-left">
-          <img src={avatarImg} alt="布布" className="avatar" />
+           <img
+    src={avatarImg}
+    alt="布布"
+    className="avatar"
+    onClick={handleAvatarClick}
+    style={{ cursor: 'pointer' }}
+  />
           <h1>布布的家</h1>
         </div>
         <div className="header-actions">
